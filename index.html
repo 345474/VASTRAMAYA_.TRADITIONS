@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vāstrāmāya - Ethnic Elegance</title>
+  <style>
+    body {
+      margin: 0; font-family: Arial, sans-serif; background: #fff; color: #333;
+    }
+    header, footer {
+      background: #000; color: white; text-align: center; padding: 10px;
+    }
+    nav {
+      display: flex; justify-content: center; gap: 15px; background: #eee; padding: 10px;
+    }
+    nav a {
+      text-decoration: none; color: #000; font-weight: bold;
+    }
+    .section {
+      padding: 20px;
+    }
+    .product {
+      display: inline-block; margin: 10px; width: 150px; position: relative;
+    }
+    .product img {
+      width: 100%; height: auto; border-radius: 10px;
+    }
+    .overlay {
+      position: absolute; bottom: 0; background: rgba(0,0,0,0.5); color: white;
+      width: 100%; text-align: center; padding: 5px;
+    }
+    .login-box, .cart-box {
+      margin: 20px auto; max-width: 400px; background: #f9f9f9; padding: 15px; border-radius: 10px;
+    }
+    .login-box input, .cart-box input {
+      width: 100%; margin-bottom: 10px; padding: 8px;
+    }
+    .btn {
+      padding: 10px; background: #000; color: #fff; border: none; width: 100%; cursor: pointer;
+    }
+    .footer-links {
+      display: flex; flex-direction: column; align-items: center; margin-top: 20px;
+    }
+    .footer-links a {
+      color: white; text-decoration: none; margin: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vāstrāmāya</h1>
+    <p>Ethnic Wear & Jewelry for All</p>
+  </header>
+
+  <nav>
+    <a href="#men">Men</a>
+    <a href="#women">Women</a>
+    <a href="#jewelry">Jewelry</a>
+    <a href="#children">Children</a>
+    <a href="#cart">Cart</a>
+    <a href="#login">Login</a>
+    <a href="#admin" style="display:none;" id="adminLink">Admin</a>
+  </nav>
+
+  <div class="section" id="men">
+    <h2>Men's Clothing</h2>
+    <div class="product">
+      <img src="https://i.imgur.com/9X6h3NP.jpg" />
+      <div class="overlay">Men's Kurta - ₹899</div>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/l8V04EB.jpg" />
+      <div class="overlay">Ethnic Jacket - ₹1299</div>
+    </div>
+  </div>
+
+  <div class="section" id="women">
+    <h2>Women's Clothing</h2>
+    <div class="product">
+      <img src="https://i.imgur.com/Jl6RZXR.jpg" />
+      <div class="overlay">Lehenga - ₹1999</div>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/GArlfYw.jpg" />
+      <div class="overlay">Saree - ₹1599</div>
+    </div>
+  </div>
+
+  <div class="section" id="jewelry">
+    <h2>Jewelry</h2>
+    <div class="product">
+      <img src="https://i.imgur.com/NehDiPC.jpg" />
+      <div class="overlay">Necklace Set - ₹499</div>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/DGlNdr3.jpg" />
+      <div class="overlay">Earrings - ₹199</div>
+    </div>
+  </div>
+
+  <div class="section" id="children">
+    <h2>Children's Wear</h2>
+    <div class="product">
+      <img src="https://i.imgur.com/CjUKkD8.jpg" />
+      <div class="overlay">Kids Sherwani - ₹799</div>
+    </div>
+    <div class="product">
+      <img src="https://i.imgur.com/OHbbyAg.jpg" />
+      <div class="overlay">Girls Frock - ₹599</div>
+    </div>
+  </div>
+
+  <div class="section" id="cart">
+    <h2>Place Order</h2>
+    <div class="cart-box">
+      <input type="text" id="custName" placeholder="Your Name" />
+      <input type="tel" id="custPhone" placeholder="Mobile Number" />
+      <input type="text" id="custAddress" placeholder="Delivery Address" />
+      <button class="btn" onclick="placeOrder()">Place Order</button>
+    </div>
+  </div>
+
+  <div class="section" id="login">
+    <h2>Login</h2>
+    <div class="login-box">
+      <input type="text" id="loginEmail" placeholder="Email" />
+      <input type="password" id="loginPass" placeholder="Password" />
+      <button class="btn" onclick="login()">Sign In</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Vāstrāmāya</p>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/vastramayatraditions">Instagram</a>
+      <a href="https://facebook.com/share/16eXrSCxMW/">Facebook</a>
+      <a href="https://youtube.com/@vastramaya-traditions">YouTube</a>
+      <a href="#contact">Connect With Us</a>
+      <p>24/7 Customer Support | Non-Returnable & Non-Refundable</p>
+    </div>
+  </footer>
+
+  <script>
+    function placeOrder() {
+      const name = document.getElementById("custName").value;
+      const phone = document.getElementById("custPhone").value;
+      const address = document.getElementById("custAddress").value;
+      alert("Thank you " + name + "! Your order has been received.");
+    }
+
+    function login() {
+      const email = document.getElementById("loginEmail").value;
+      const pass = document.getElementById("loginPass").value;
+      if (email === "admin@vastramaya.com" && pass === "1234") {
+        document.getElementById("adminLink").style.display = "inline-block";
+        alert("Logged in as admin.");
+      } else {
+        alert("Welcome " + email + "!");
+      }
+    }
+  </script>
+</body>
+</html>
